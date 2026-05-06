@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>集中度入力 - Task Booster</title>
+</head>
+<body>
+    <h1>作業終了</h1>
+
+    <p>タスク：</p>
+    <h2 th:text="${focusSession.task.title}"></h2>
+
+    <form th:action="@{/sessions/{id}/finish(id=${focusSession.id})}" method="post">
+        <label for="focusScore">集中度を選択してください（1〜5）</label>
+        <select name="focusScore" id="focusScore" required>
+            <option value="1">1：😫ほぼ集中できなかった</option>
+            <option value="2">2：😅あまり集中できなかった</option>
+            <option value="3">3：😃普通</option>
+            <option value="4">4：😄集中できた</option>
+            <option value="5">5：😆かなり集中できた</option>
+        </select>
+
+        <button type="submit">結果を見る</button>
+    </form>
+</body>
+</html>
