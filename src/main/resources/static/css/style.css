@@ -1,0 +1,105 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f6f8fb;
+    color: #1f2937;
+    margin: 0;
+    padding: 40px 16px;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 32px;
+}
+
+form {
+    margin: 16px 0;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: #1d4ed8;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.task-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.feedback {
+    padding: 20px;
+    background: #eff6ff;
+    border-left: 6px solid #2563eb;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.meta {
+    color: #6b7280;
+}
+
+.error-message {
+    padding: 12px 16px;
+    background: #fef2f2;
+    color: #b91c1c;
+    border-left: 6px solid #ef4444;
+    border-radius: 10px;
+    font-weight: 700;
+}

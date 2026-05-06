@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Task Booster</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Task Booster</h1>
+    <main class="container">
+        <h1>Task Booster</h1>
+        <p class="subtitle">タスクを増やすな。まず1つ始めろ。</p>
 
-    <h2>今日のタスク</h2>
+        <h2>今日のタスク</h2>
 
-    <form action="/tasks" method="post">
-        <input type="text" name="title" placeholder="タスクを入力" required>
-        <button type="submit">登録</button>
-    </form>
+        <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
-    <ul>
-        <li th:each="task : ${tasks}">
-            <span th:text="${task.id}"></span>:
-            <span th:text="${task.title}"></span>
-        </li>
-    </ul>
-    <ul>
-        <li th:each="task : ${tasks}">
-            <span th:text="${task.id}"></span>:
-            <span th:text="${task.title}"></span>
+        <form action="/tasks" method="post">
+            <input type="text" name="title" placeholder="タスクを入力" required>
+            <button type="submit">登録</button>
+        </form>
 
-            <form th:action="@{/sessions/start/{taskId}(taskId=${task.id})}" method="post" style="display:inline;">
-                <button type="submit">開始</button>
-            </form>
-        </li>
-    </ul>
+        <ul class="task-list">
+            <li class="task-item" th:each="task : ${tasks}">
+                <span class="task-title">
+                    <span th:text="${task.id}"></span>:
+                    <span th:text="${task.title}"></span>
+                </span>
+
+                <form th:action="@{/sessions/start/{taskId}(taskId=${task.id})}" method="post">
+                    <button type="submit">開始</button>
+                </form>
+            </li>
+        </ul>
+    </main>
 </body>
 </html>
