@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 
@@ -24,10 +25,11 @@ public class TaskController {
     }
 
     @PostMapping("/tasks")
-    public String create(@RequestParam String title) {
+    public String create(@RequestParam String title, RedirectAttributes redirectAttributes) {
         long taskCount = taskRepository.count();
 
         if (taskCount >= 3) {
+            redirectAttributes.addFlashAttribute("errorMessage", "「今日のタスク」は3つまで! 増やす前に、まずは1つ始めましょう。");
             return "redirect:/tasks";
         }
 
