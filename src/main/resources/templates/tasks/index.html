@@ -20,5 +20,15 @@
             <span th:text="${task.title}"></span>
         </li>
     </ul>
+    <ul>
+        <li th:each="task : ${tasks}">
+            <span th:text="${task.id}"></span>:
+            <span th:text="${task.title}"></span>
+
+            <form th:action="@{/sessions/start/{taskId}(taskId=${task.id})}" method="post" style="display:inline;">
+                <button type="submit">開始</button>
+            </form>
+        </li>
+    </ul>
 </body>
 </html>

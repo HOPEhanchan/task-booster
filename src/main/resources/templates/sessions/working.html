@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>作業中 - Task Booster</title>
+</head>
+<body>
+    <h1>作業中</h1>
+
+    <p>現在のタスク：</p>
+    <h2 th:text="${focusSession.task.title}"></h2>
+
+    <p>開始時刻：</p>
+    <p th:text="${focusSession.startedAt}"></p>
+
+    <p>この作業に集中してください。</p>
+
+    <a href="/tasks">タスク一覧に戻る</a>
+</body>
+</html>
